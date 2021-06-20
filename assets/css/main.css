@@ -116,7 +116,7 @@ input, select, textarea {
 		font-weight: 700;
 	}
 
-	em, i {
+	em {
 		font-style: italic;
 	}
 
@@ -1629,7 +1629,7 @@ input, select, textarea {
 /* Form */
 
 	form {
-		margin: 0 0 2.25em 0;
+		margin: 0 0 0 0;
 	}
 
 	label {
@@ -1678,7 +1678,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #264348;
+			border-color: #004953;
 		}
 
 
@@ -1775,7 +1775,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #264348;
+			border-color: #004953;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -1840,115 +1840,6 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 	}
-
-		.image[data-position] img {
-			-moz-object-fit: cover;
-			-webkit-object-fit: cover;
-			-ms-object-fit: cover;
-			object-fit: cover;
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-		.image[data-position="top left"] img {
-			-moz-object-position: top left;
-			-webkit-object-position: top left;
-			-ms-object-position: top left;
-			object-position: top left;
-		}
-
-		.image[data-position="top"] img {
-			-moz-object-position: top;
-			-webkit-object-position: top;
-			-ms-object-position: top;
-			object-position: top;
-		}
-
-		.image[data-position="top right"] img {
-			-moz-object-position: top right;
-			-webkit-object-position: top right;
-			-ms-object-position: top right;
-			object-position: top right;
-		}
-
-		.image[data-position="right"] img {
-			-moz-object-position: right;
-			-webkit-object-position: right;
-			-ms-object-position: right;
-			object-position: right;
-		}
-
-		.image[data-position="bottom right"] img {
-			-moz-object-position: bottom right;
-			-webkit-object-position: bottom right;
-			-ms-object-position: bottom right;
-			object-position: bottom right;
-		}
-
-		.image[data-position="bottom"] img {
-			-moz-object-position: bottom;
-			-webkit-object-position: bottom;
-			-ms-object-position: bottom;
-			object-position: bottom;
-		}
-
-		.image[data-position="bottom left"] img {
-			-moz-object-position: bottom left;
-			-webkit-object-position: bottom left;
-			-ms-object-position: bottom left;
-			object-position: bottom left;
-		}
-
-		.image[data-position="left"] img {
-			-moz-object-position: left;
-			-webkit-object-position: left;
-			-ms-object-position: left;
-			object-position: left;
-		}
-
-		.image[data-position="center"] img {
-			-moz-object-position: center;
-			-webkit-object-position: center;
-			-ms-object-position: center;
-			object-position: center;
-		}
-
-		.image[data-position="25% 25%"] img {
-			-moz-object-position: 25% 25%;
-			-webkit-object-position: 25% 25%;
-			-ms-object-position: 25% 25%;
-			object-position: 25% 25%;
-		}
-
-		.image[data-position="75% 25%"] img {
-			-moz-object-position: 75% 25%;
-			-webkit-object-position: 75% 25%;
-			-ms-object-position: 75% 25%;
-			object-position: 75% 25%;
-		}
-
-		.image[data-position="75% 75%"] img {
-			-moz-object-position: 75% 75%;
-			-webkit-object-position: 75% 75%;
-			-ms-object-position: 75% 75%;
-			object-position: 75% 75%;
-		}
-
-		.image[data-position="25% 75%"] img {
-			-moz-object-position: 25% 75%;
-			-webkit-object-position: 25% 75%;
-			-ms-object-position: 25% 75%;
-			object-position: 25% 75%;
-		}
-
-		.image img {
-			border-radius: 5px;
-			display: block;
-		}
 
 		.image.left {
 			float: left;
@@ -2193,7 +2084,7 @@ input, select, textarea {
 		padding: 0.35em 0 0 3.5em;
 		position: relative;
 		vertical-align: top;
-		width: 48%;
+		width: 33%;
 	}
 
 
@@ -2429,25 +2320,82 @@ input, select, textarea {
 
 		.features article .image {
 			display: inline-block;
-			padding-right: 2.5em;
 			vertical-align: middle;
-			width: 48%;
+			width: 40%;
 		}
 
 			.features article .image img {
 				display: block;
 				width: 100%;
+				border-radius: 1em;
 			}
 
 		.features article .inner {
 			display: inline-block;
 			vertical-align: middle;
 			width: 50%;
+			padding-left: 2em;
 		}
 
 			.features article .inner > :last-child {
 				margin-bottom: 0;
 			}
+
+			.grey {
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+				-webkit-transition: 0.7s ease-in-out;
+				transition: 0.7s ease-in-out;
+			}	
+	
+			.grey:hover {
+				-webkit-filter: grayscale(0);
+				filter: grayscale(0);
+			}
+
+			
+			.features article a {
+				position: relative;
+			  }
+
+			.overlay {
+				position: absolute;
+				background: linear-gradient(
+					to right,
+					rgba(24,27,38,0.5) 0%,
+					rgba(0,0,0,0) 100%
+				);
+				top: 30%;
+				left: 50%;
+				overflow: hidden;
+				width: 0;
+				height: 40%;
+				transition: 0.7s ease-in-out;
+			  }
+			  
+			  .features article a:hover .overlay {
+				width: 100%;
+				left: 0;
+			  }
+			  
+			  .cap {
+				color: white;
+				font-size: 24px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				white-space: nowrap;
+			  }
+				
+	
+	
+	
+
+
+
 
 
 /*--------------------------------------------------------------
@@ -3008,6 +2956,177 @@ input, select, textarea {
   
   .portfolio-details .portfolio-description p {
 	padding: 0;
+  }
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact {
+	padding-bottom: 130px;
+  }
+  
+  .contact .info {
+	padding: 30px;
+	background: #fff;
+	height: 100%;
+	width: 100%;
+	box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .contact .info i {
+	font-size: 20px;
+	color: #004953;
+	float: left;
+	width: 44px;
+	height: 44px;
+	background: #d2d9db;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	transition: all 0.3s ease-in-out;
+  }
+  
+  .contact .info h4 {
+	padding: 0 0 0 4em;
+	margin-bottom: 0px;
+	line-height: 100%;
+	font-size: 18px;
+	font-weight: 600;
+	color: #050d18;
+  }
+  
+  .contact .info p {
+	padding: 0 0 0 5em;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #004953;
+  }
+
+  .contact .info .map {
+	height: 60%;
+	padding: 30px 0 0 0;
+  }
+  
+  .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+	background: #004953;
+	color: #fff;
+  }
+  
+  .contact .email-form {
+	width: 100%;
+	padding: 30px;
+	background: #fff;
+	box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .contact .email-form .form-group {
+	padding-bottom: 8px;
+  }
+  
+  .contact .php-email-form .validate {
+	display: none;
+	color: red;
+	margin: 0 0 15px 0;
+	font-weight: 400;
+	font-size: 13px;
+  }
+  
+  .contact .php-email-form .error-message {
+	display: none;
+	color: #fff;
+	background: #ed3c0d;
+	text-align: left;
+	padding: 15px;
+	font-weight: 600;
+  }
+  
+  .contact .php-email-form .error-message br + br {
+	margin-top: 25px;
+  }
+  
+  .contact .php-email-form .sent-message {
+	display: none;
+	color: #fff;
+	background: #18d26e;
+	text-align: center;
+	padding: 15px;
+	font-weight: 600;
+  }
+  
+  .contact .php-email-form .loading {
+	display: none;
+	background: #fff;
+	text-align: center;
+	padding: 15px;
+  }
+  
+  .contact .php-email-form .loading:before {
+	content: "";
+	display: inline-block;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	margin: 0 10px -6px 0;
+	border: 3px solid #18d26e;
+	border-top-color: #eee;
+	-webkit-animation: animate-loading 1s linear infinite;
+	animation: animate-loading 1s linear infinite;
+  }
+  
+  .contact .php-email-form .form-group {
+	margin-bottom: 15px;
+  }
+  
+  .contact .php-email-form label {
+	padding-bottom: 8px;
+  }
+  
+  .contact .php-email-form input, .contact .php-email-form textarea {
+	border-radius: 0;
+	box-shadow: none;
+	font-size: 14px;
+  }
+  
+  .contact .php-email-form input {
+	height: 44px;
+  }
+  
+  .contact .php-email-form textarea {
+	padding: 10px 15px;
+  }
+  
+  .contact .php-email-form button[type="submit"] {
+	background: #149ddd;
+	border: 0;
+	padding: 10px 24px;
+	color: #fff;
+	transition: 0.4s;
+	border-radius: 4px;
+  }
+  
+  .contact .php-email-form button[type="submit"]:hover {
+	background: #37b3ed;
+  }
+  
+  @-webkit-keyframes animate-loading {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @keyframes animate-loading {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
   }
 
 
